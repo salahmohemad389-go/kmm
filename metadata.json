@@ -1,0 +1,6 @@
+{
+  "name": "ELITE KINETIC",
+  "description": "High-performance fitness application featuring active workout session tracking, biometric metrics, client management, and AI fitness coaching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-fixed: #c3f400;
+  --color-primary-fixed-dim: #abd600;
+  --color-on-primary-fixed: #161e00;
+  --color-on-primary-fixed-variant: #3c4d00;
+  --color-primary-container: #c3f400;
+  --color-on-primary-container: #556d00;
+
+  --color-background: #101415;
+  --color-surface: #101415;
+  --color-surface-dim: #101415;
+  --color-surface-bright: #363a3b;
+  --color-surface-container-lowest: #0b0f10;
+  --color-surface-container-low: #191c1e;
+  --color-surface-container: #1d2022;
+  --color-surface-container-high: #272a2c;
+  --color-surface-container-highest: #323537;
+
+  --color-on-surface: #e0e3e5;
+  --color-on-surface-variant: #c4c9ac;
+  --color-outline: #8e9379;
+  --color-outline-variant: #444933;
+
+  --color-secondary: #c8c6c5;
+  --color-secondary-container: #474746;
+  --color-on-secondary-container: #b7b5b4;
+
+  --color-error: #ffb4ab;
+
+  --font-headline: 'Montserrat', sans-serif;
+  --font-headline-xl: 'Montserrat', sans-serif;
+  --font-headline-lg: 'Montserrat', sans-serif;
+  --font-headline-md: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-body-lg: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-label-md: 'Inter', sans-serif;
+  --font-label-sm: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .glass-card {
+    background-color: rgba(29, 32, 34, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(68, 73, 51, 0.5);
+  }
+
+  .glass-panel {
+    background-color: rgba(25, 28, 30, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(68, 73, 51, 0.6);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(195, 244, 0, 0.25);
+  }
+
+  .primary-glow {
+    box-shadow: 0 0 15px rgba(195, 244, 0, 0.35);
+  }
+
+  .primary-glow-hover:hover {
+    box-shadow: 0 0 25px rgba(195, 244, 0, 0.5);
+  }
+
+  .active-set {
+    background: rgba(195, 244, 0, 0.08);
+    border: 1px solid rgba(195, 244, 0, 0.4);
+  }
+
+  .premium-shadow {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 4px 12px rgba(0, 0, 0, 0.25),
+      0 12px 36px rgba(0, 0, 0, 0.2);
+  }
+
+  .premium-shadow-lg {
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 24px 64px rgba(0, 0, 0, 0.25);
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(68, 73, 51, 0) 0%,
+      rgba(68, 73, 51, 0.15) 50%,
+      rgba(68, 73, 51, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #c3f400, #abd600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow {
+    border-color: rgba(195, 244, 0, 0.3);
+    box-shadow: 0 0 12px rgba(195, 244, 0, 0.1);
+  }
+
+  .ring-glow {
+    --tw-ring-color: rgba(195, 244, 0, 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(195, 244, 0, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(195, 244, 0, 0.4); }
+}
+
+@keyframes counter-slide {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { box-shadow: 0 0 10px rgba(195, 244, 0, 0.15); }
+  50% { box-shadow: 0 0 25px rgba(195, 244, 0, 0.35); }
+}
+
+@keyframes icon-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #323537;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444933;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #101415;
+  color: #e0e3e5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-headline {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* GPU acceleration hints */
+.gpu-accelerated {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(195, 244, 0, 0.3);
+  color: #e0e3e5;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(195, 244, 0, 0.6);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll snap for carousels */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-center {
+  scroll-snap-align: center;
+}
+
+/* Gradient text fallback */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #c3f400, #abd600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Safe area for mobile bottom nav */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Interactive card press effect */
+.press-effect {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.press-effect:active {
+  transform: scale(0.98);
+}
+
+/* Line clamp utility for text overflow */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 3D Card Flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Animation utility classes */
+.animate-float-gentle {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+.animate-glow-breathe {
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+
+.animate-icon-wiggle {
+  animation: icon-wiggle 0.4s ease-in-out;
+}

@@ -1,0 +1,13 @@
+export { authService } from './auth.service';
+export { aiService } from './ai.service';
+export { userService } from './user.service';
+export { storeService } from './store.service';
+export { foodService } from './food.service';
+export { clientService } from './client.service';
+export { storyService } from './story.service';
+export { subscriptionService } from './subscription.service';
+export { programService } from './program.service';
+export { progressService } from './progress.service';
+export { settingsService } from './settings.service';
+export { pointsService } from './points.service';
+export { intakeService } from './intake.service';
